@@ -136,7 +136,7 @@ tourSchema.virtual('reviews', {
 
 tourSchema.pre('save', function (next) {
   this.slug = slugify(this.name, { lower: true });
-  console.log(this.slug);
+  // console.log(this.slug);
   next();
 });
 
@@ -163,11 +163,11 @@ tourSchema.pre(/^find/, function (next) {
   next();
 });
 
-tourSchema.post(/^find/, function (docs, next) {
-  console.log(`Querry took ${Date.now() - this.start} milliseconds`);
+// tourSchema.post(/^find/, function (docs, next) {
+//   console.log(`Querry took ${Date.now() - this.start} milliseconds`);
 
-  next();
-});
+//   next();
+// });
 
 //Aggregation middleware
 
